@@ -10,10 +10,25 @@ public class StudentHandle {
         String name = sc.nextLine();
         System.out.println("Mời bạn nhập điểm số môn Toán: ");
         double scoreMath = Double.parseDouble(sc.nextLine());
+        while (0 > scoreMath || scoreMath > 10) {
+            System.out.println("Theo thang điểm 10 mời bạn nhập lại điểm Toán: ");
+            scoreMath = Double.parseDouble(sc.nextLine());
+        }
+
         System.out.println("Mời bạn nhập điểm số môn Lý: ");
         double scorePhysic = Double.parseDouble(sc.nextLine());
+        while (0 > scorePhysic || scorePhysic > 10) {
+            System.out.println("Theo thang điểm 10 mời bạn nhập lại điểm Lý: ");
+            scorePhysic = Double.parseDouble(sc.nextLine());
+        }
+
         System.out.println("Mời bạn nhập điểm số môn Hóa: ");
         double scoreChemistry = Double.parseDouble(sc.nextLine());
+        while (0 > scoreChemistry || scoreChemistry > 10) {
+            System.out.println("Theo thang điểm 10 mời bạn nhập lại điểm Hóa: ");
+            scoreChemistry = Double.parseDouble(sc.nextLine());
+        }
+
         Student student = new Student(name, scoreMath, scorePhysic, scoreChemistry);
         return student;
     }
@@ -46,9 +61,9 @@ public class StudentHandle {
             else if (rank(st).equalsIgnoreCase("b")) perB += 1;
             else if (rank(st).equalsIgnoreCase("c")) perC += 1;
         }
-        System.out.println("Tỉ lệ xếp hạng A :"+(perA/students.length)*100+"%");
-        System.out.println("Tỉ lệ xếp hạng B :"+(perB/students.length)*100+"%");
-        System.out.println("Tỉ lệ xếp hạng C :"+(perC/students.length)*100+"%");
+        System.out.println("Tỉ lệ xếp hạng A :" + (perA / students.length) * 100 + "%");
+        System.out.println("Tỉ lệ xếp hạng B :" + (perB / students.length) * 100 + "%");
+        System.out.println("Tỉ lệ xếp hạng C :" + (perC / students.length) * 100 + "%");
 
     }
 }
